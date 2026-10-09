@@ -1,0 +1,33 @@
+{
+  "session": "20261009182844",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…That can't be. He was… he was already dead when I found him at midnight. …No. Wait. I heard something earlier. Around ten-fifty, from under the bridge — a tiny bell, ringing, high-pitched. And then someone walked away along the riverbank with a dark umbrella. I couldn't see their face. I hid in a bus shelter… I was too scared to go down until midnight.",
+      "emotion": "shocked",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "Seiran… that's my school. But I'm in 2-A, not 2-B — I don't know that page at all. …Detective, please. There's something I have to tell you. I knew Ishida-sensei. He tutored me in maths, secretly, because Seiran forbids outside lessons. Last night he texted me at 21:40: 'Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.' …It felt wrong, so I went toward his house. That's why I was on the bridge. Here — look, it's on my phone.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}

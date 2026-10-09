@@ -1,0 +1,22 @@
+{
+  "session": "20261009181745",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "You're shaking. Nobody here thinks you did this. What did you hear tonight?"
+    },
+    {
+      "from": "them",
+      "text": "You… really don't think it was me…? Okay. Okay, I'll tell you. It wasn't midnight when I first got there. It was earlier, around 22:50. I was on the bridge and I heard it — a tiny, high-pitched bell, ringing from under the bridge. Then someone walked away along the riverbank with a dark umbrella. I couldn't see their face… anything, really. I was so scared I hid in the bus shelter for almost an hour before I made myself go down and look. That's when I found him.",
+      "emotion": "nervous",
+      "reveal": "bell_sound",
+      "source": "ai"
+    }
+  ]
+}

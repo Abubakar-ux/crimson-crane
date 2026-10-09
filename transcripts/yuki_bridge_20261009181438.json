@@ -1,0 +1,44 @@
+{
+  "session": "20261009181438",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "Did you kill him?"
+    },
+    {
+      "from": "them",
+      "text": "…No! No, I— *clutches the umbrella tighter* I just found him, Detective. He was sitting against the pillar, and there was a red crane in his mouth, and… I called you right away. Why would you ask me that…?",
+      "emotion": "shocked",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…You're right. I lied. I'm sorry. I was on the bridge much earlier — almost eleven. I heard this tiny, high-pitched bell ringing from under it… and then someone with a dark umbrella walked away along the riverbank. I couldn't see their face. I was so scared I hid in a bus shelter for an hour before I dared to go down…",
+      "emotion": "nervous",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "…That's my class. 2-B. *hands trembling* …I knew Ishida-sensei, Detective. He gave me private maths lessons at his house — I can't afford cram school, and Seiran forbids outside tutoring, so I never told anyone. He canceled our lesson that night, at 21:40. Look… 'Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.' …It felt wrong, so I went toward his house. That's why I was on the bridge.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}

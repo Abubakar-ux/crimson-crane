@@ -1,0 +1,22 @@
+{
+  "session": "20261009174317",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "no i need to ask you few questions"
+    },
+    {
+      "from": "them",
+      "text": "Oh… okay. I'll answer what I can, Detective. …But I already told you everything I saw.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    }
+  ]
+}

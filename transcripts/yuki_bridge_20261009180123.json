@@ -1,0 +1,33 @@
+{
+  "session": "20261009180123",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "no i need to ask you some question first for my investigation"
+    },
+    {
+      "from": "them",
+      "text": "…I understand. Ask what you need, Detective. I'll answer what I can.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…22:00? But I— …Detective, I have to tell you the truth. I wasn't just passing by at midnight. I was on the bridge earlier… around 22:50. I heard a tiny, high-pitched bell ringing from under it. Then someone walked away along the riverbank… with a dark umbrella. I couldn't see their face… anything. I was so scared I hid in a bus shelter for almost an hour before I could make myself go down and look…",
+      "emotion": "shocked",
+      "reveal": "bell_sound",
+      "source": "ai"
+    }
+  ]
+}

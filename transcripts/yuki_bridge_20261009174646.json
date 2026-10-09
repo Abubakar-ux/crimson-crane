@@ -1,0 +1,22 @@
+{
+  "session": "20261009174646",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "where were u"
+    },
+    {
+      "from": "them",
+      "text": "I… I told you, Detective. I was walking home from the store, near Shirasagi Bridge. I only stopped because I saw something… someone, sitting under it. I didn't stay long. I called right away… …Please, I already told you everything.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    }
+  ]
+}

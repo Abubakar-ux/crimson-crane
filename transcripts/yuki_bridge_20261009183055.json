@@ -1,0 +1,44 @@
+{
+  "session": "20261009183055",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "Then why are you holding that umbrella like a weapon? Who are you afraid of?"
+    },
+    {
+      "from": "them",
+      "text": "I-I'm not… I just didn't want to drop it. It was raining, Detective. That's all. …Please don't look at me like that.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…You said he died between ten and eleven? Then… then I heard something. Around ten-fifty. A tiny bell, ringing from under the bridge. And someone walked away along the riverbank, with a dark umbrella. I couldn't see their face… I hid in a bus shelter. I was too scared to look until midnight.",
+      "emotion": "shocked",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "That's… that's my school. Seiran Academy. I'm a second-year… class 2-A, not 2-B. I don't know that page at all. But if it's Seiran's paper, then… Detective, there's something I have to tell you. About why I was really out there.",
+      "emotion": "shocked",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}

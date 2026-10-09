@@ -1,0 +1,15 @@
+# dependencies & build output
+node_modules
+dist
+tsconfig.tsbuildinfo
+
+# secrets — never commit your OpenRouter key
+.env
+
+# local tooling
+.venv
+.claude
+
+# scratch comparison images made while picking art
+art-source/pixai/*_sheet.png
+art-source/pixai/*check*.png

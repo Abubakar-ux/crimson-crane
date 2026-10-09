@@ -1,0 +1,33 @@
+{
+  "session": "20261009165901",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "You look terrified. What happened tonight?"
+    },
+    {
+      "from": "them",
+      "text": "…You're being kind, Detective. But I already told you. I was walking home… and then I found him. I keep seeing the red crane every time I close my eyes…",
+      "emotion": "sad",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "You look terrified. What happened tonight?"
+    },
+    {
+      "from": "them",
+      "text": "…I told you already, didn't I? I was just walking home. …Please, Detective… I want to go home. My parents must be worried sick…",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    }
+  ]
+}
