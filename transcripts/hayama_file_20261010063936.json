@@ -1,0 +1,55 @@
+{
+  "session": "20261010063936",
+  "interrogation": "hayama_file",
+  "char": "hayama",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…Sit down, Kagami. Ask what you came to ask. I closed that file. You read the signature."
+    },
+    {
+      "from": "ren",
+      "text": "Did you go to Seiran Academy yourself?"
+    },
+    {
+      "from": "them",
+      "text": "Course I went. Roof, annex, the whole walk-through. Wet tiles, no rail, everyone said she slipped. Three days, kid. Filed it.",
+      "emotion": "neutral",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Who is your source? Did the killer send you anything?"
+    },
+    {
+      "from": "them",
+      "text": "Source? You're my source, kid — you're sitting in front of me. And yeah, the killer sent something. Red crane on my desk. 'You closed the file, Inspector.' That's it. No name, no note.",
+      "emotion": "angry",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Hinako Mori File"
+    },
+    {
+      "from": "them",
+      "text": "...So you read it. All of it, huh. Then you noticed the dates. Three days, Kagami. I didn't close it because I believed it. Third day, the chief called me in. Ueno — the board liaison, dead man number three — wanted it finished before entrance exams. School's reputation. I had doubts. Ishida was too calm. Kurosaki too quick with her story. And I signed anyway. Got promoted that autumn. Never said that out loud before. *stares at the table* Got a cigarette on you?",
+      "emotion": "nervous",
+      "reveal": "hayama_pressure",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Receipt for Her Belongings"
+    },
+    {
+      "from": "them",
+      "text": "...Elder sister. Yeah. She came. Every day for a month, sat in that lobby polite as anything. Short hair, glasses, maybe nineteen. I called her Mori-san, never even learned her first name. Told her to go home and grieve. Last visit, she left a white paper crane on my desk. Kept it a year. Then I threw it away. *rubs his face* God, I don't even know her name.",
+      "emotion": "sad",
+      "reveal": "hayama_sister",
+      "source": "ai"
+    }
+  ]
+}

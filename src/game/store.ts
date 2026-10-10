@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { SCRIPT } from './script'
+import { CLUES } from './clues'
 import { INTERROGATIONS } from './interrogations'
 import type { ChoiceOption, Cmd, Emotion, LogEntry, StageChar } from './types'
 
@@ -22,7 +23,7 @@ type Snapshot = {
   ren?: Emotion
 }
 
-type BlockingCmd = Extract<Cmd, { t: 'say' | 'choice' | 'interrogate' | 'card' | 'end' }>
+type BlockingCmd = Extract<Cmd, { t: 'say' | 'choice' | 'interrogate' | 'present' | 'card' | 'end' }>
 
 type GameState = Snapshot & {
   screen: 'title' | 'game'
@@ -36,6 +37,7 @@ type GameState = Snapshot & {
   toTitle: () => void
   advance: () => void
   choose: (opt: ChoiceOption) => void
+  present: (clueId: string) => void
   setEmotion: (char: string, emotion: StageChar['emotion']) => void
   addClue: (id: string) => void
   logLine: (e: LogEntry) => void
@@ -131,6 +133,11 @@ function run(snap: Snapshot): Partial<GameState> {
         s.scene = cmd.scene
         s.idx = 0
         continue
+      case 'jumpIf':
+        if (!s.flags.includes(cmd.flag)) break
+        s.scene = cmd.scene
+        s.idx = 0
+        continue
       case 'say':
         if (cmd.emotion && cmd.who) s.stage = s.stage.map((c) => (c.char === cmd.who ? { ...c, emotion: cmd.emotion! } : c))
         if (cmd.who === 'ren' && cmd.emotion) s.ren = cmd.emotion
@@ -145,6 +152,7 @@ function run(snap: Snapshot): Partial<GameState> {
         return out(cmd)
       }
       case 'choice':
+      case 'present':
       case 'card':
       case 'end':
         writeSave(s)
@@ -185,7 +193,7 @@ export const useGame = create<GameState>((set, get) => ({
 
   advance: () => {
     const s = get()
-    if (!s.current || s.current.t === 'choice' || s.current.t === 'interrogate' || s.current.t === 'end') return
+    if (!s.current || (s.current.t !== 'say' && s.current.t !== 'card')) return
     set(merge(run({ ...pick(s), idx: s.idx + 1 })))
   },
 
@@ -193,6 +201,14 @@ export const useGame = create<GameState>((set, get) => ({
     const s = get()
     const log = [...s.log, { who: 'ren', text: `▶ ${opt.text}` }]
     set(merge(run({ ...pick(s), log, scene: opt.goto, idx: 0 })))
+  },
+
+  present: (clueId) => {
+    const s = get()
+    if (s.current?.t !== 'present') return
+    const log = [...s.log, { who: 'ren', text: `▶ Presents: ${CLUES[clueId]?.name ?? clueId}` }]
+    const scene = clueId === s.current.answer ? s.current.ok : s.current.fail
+    set(merge(run({ ...pick(s), log, scene, idx: 0 })))
   },
 
   setEmotion: (char, emotion) => set((s) => ({ stage: s.stage.map((c) => (c.char === char ? { ...c, emotion } : c)) })),

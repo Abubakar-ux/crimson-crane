@@ -1,15 +1,5 @@
-import type { Cmd, Emotion, Script } from '../types'
-
-// Small helpers to keep the script readable.
-const say = (who: string, text: string, emotion?: Emotion): Cmd => ({ t: 'say', who, text, emotion })
-const think = (text: string, emotion?: Emotion): Cmd => ({ t: 'say', who: 'ren', text, thought: true, emotion })
-/** Ren's portrait expression; it stays until his next tagged line. */
-const face = (emotion: Emotion): Cmd => ({ t: 'ren', emotion })
-const nar = (text: string): Cmd => ({ t: 'say', text })
-const show = (char: string, emotion: Emotion = 'neutral', pos: 'left' | 'center' | 'right' = 'center'): Cmd => ({ t: 'show', char, emotion, pos })
-const jump = (scene: string): Cmd => ({ t: 'jump', scene })
-const bgm = (id: string | null): Cmd => ({ t: 'bgm', id })
-const sfx = (id: string): Cmd => ({ t: 'sfx', id })
+import type { Script } from '../types'
+import { bgm, face, jump, nar, say, show, sfx, think } from './helpers'
 
 export const CHAPTER1: Script = {
   start: [
@@ -140,7 +130,7 @@ export const CHAPTER1: Script = {
     say('yuki', '…Are you another detective? I already told the other one everything.', 'nervous'),
     think('She’s lying. Not about everything. But people who’ve told you everything don’t hold their umbrella that tightly.', 'serious'),
     bgm('interrogation'),
-    nar('— INTERROGATION — Ask Yuki anything in your own words, or present evidence from your notebook. Uncover what she is hiding.'),
+    nar('— INTERROGATION — Choose what to ask, and press her when an answer doesn’t add up. Presenting the right evidence from your notebook will break a lie faster. Uncover what Yuki is hiding.'),
     { t: 'interrogate', id: 'yuki_bridge' },
   ],
 
@@ -176,6 +166,7 @@ export const CHAPTER1: Script = {
     say('kotone', 'Welcome! I’m Kotone Amane. You must be new. Nobody looks that lost after midnight unless they’re new or drunk.', 'happy'),
     say('ren', 'Ren Kagami. New. Not drunk. Yet.', 'neutral'),
     say('kotone', 'Then I’ll make yours strong.', 'smug'),
+    nar('Before I can stop her, she takes my soaked coat and hangs it on the hook by the heater, next to the door.'),
     nar('She moves behind the counter with the ease of someone who has done this ten thousand times. A tiny silver charm on her apron string sways as she works.'),
     think('The café is empty except for us — and a string of paper cranes hanging above the counter. White ones. Dozens of them.'),
     {
@@ -225,7 +216,7 @@ export const CHAPTER1: Script = {
   ending: [
     face('neutral'),
     nar('The coffee is excellent. For twenty minutes, Mizunagi almost feels like a normal city.'),
-    nar('Then I reach for my coat.'),
+    nar('Then I take my coat down from the hook by the heater.'),
     { t: 'hideAll' },
     bgm(null),
     { t: 'effect', kind: 'redflash' },
@@ -240,7 +231,7 @@ export const CHAPTER1: Script = {
     { t: 'clue', id: 'pocket_crane' },
     think('He was close enough to touch me tonight.'),
     think('And I never even noticed.'),
-    bgm('title'),
-    { t: 'end', title: 'END OF CHAPTER 1', sub: 'To be continued…' },
+    { t: 'card', title: 'END OF CHAPTER 1', sub: 'Next: Class 2-B' },
+    jump('ch2_start'),
   ],
 }

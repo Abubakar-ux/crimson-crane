@@ -6,6 +6,9 @@ tsconfig.tsbuildinfo
 # secrets — never commit your OpenRouter key
 .env
 
+# generated walkthrough videos
+walkthrough/
+
 # local tooling
 .venv
 .claude
@@ -13,3 +16,8 @@ tsconfig.tsbuildinfo
 # scratch comparison images made while picking art
 art-source/pixai/*_sheet.png
 art-source/pixai/*check*.png
+art-source/pixai/round3/
+art-source/pixai/thumbs/
+art-source/pixai/nobell/
+art-source/pixai/*_crop.png
+art-source/pixai/*_view*.jpg

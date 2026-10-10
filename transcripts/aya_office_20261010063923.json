@@ -1,0 +1,33 @@
+{
+  "session": "20261010063923",
+  "interrogation": "aya_office",
+  "char": "aya",
+  "lines": [
+    {
+      "from": "them",
+      "text": "Relax, new guy, I brought you a coffee. Not from Café Lantern, sadly. So — Seiran Academy, huh? Told you to ask about ten years ago."
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Class 2-B Photo"
+    },
+    {
+      "from": "them",
+      "text": "...You got that from Ishida's flat? *She sets the coffee down, and for once she doesn't say anything clever.* Yeah. That's Hinako Mori. I know the face because she came to my school newspaper club, ten years ago, with a notebook full of stories about the reflection room. She wanted us to print it. I was a first-year, I told her it wasn't my call. A week later she fell off the old annex roof. I became a reporter because I didn't say yes when it counted.",
+      "emotion": "sad",
+      "reveal": "aya_club",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Crane in My Pocket"
+    },
+    {
+      "from": "them",
+      "text": "'Welcome to Mizunagi' — so it's talking to you now, great, we're both on the mailing list. *She digs through her bag and slaps a plastic sleeve on the desk.* Two months ago, before the first body, this showed up in my mailbox. No stamp. It said: 'Ask them about Hinako Mori.' That's why I started digging, and now I can't decide if my big scoop came straight from the killer's hands.",
+      "emotion": "nervous",
+      "reveal": "aya_letter",
+      "source": "ai"
+    }
+  ]
+}

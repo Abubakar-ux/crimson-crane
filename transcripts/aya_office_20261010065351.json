@@ -1,0 +1,55 @@
+{
+  "session": "20261010065351",
+  "interrogation": "aya_office",
+  "char": "aya",
+  "lines": [
+    {
+      "from": "them",
+      "text": "Relax, new guy, I brought you a coffee. Not from Café Lantern, sadly. So — Seiran Academy, huh? Told you to ask about ten years ago."
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Ishida’s Unsent Letter"
+    },
+    {
+      "from": "them",
+      "text": "...Hinako Mori. *Her jokes vanish; she stares at the letter.* I knew her. She came to the Seiran newspaper club — I was a first-year, fifteen. She brought a notebook about the reflection room, begged us to print it, and I told her it wasn't my decision. We never printed anything. A week later she fell off the annex roof, and the school called it an accident.",
+      "emotion": "serious",
+      "reveal": "aya_club",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Class 2-B Photo"
+    },
+    {
+      "from": "them",
+      "text": "That's her. That's Hinako in the photo — I'd know her face anywhere. Ishida was her homeroom teacher, writing 'forgive me'... Detective, whoever circled that face knew exactly what she was carrying, and I don't think it was guilt that kept him quiet for ten years.",
+      "emotion": "serious",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Ishida’s Last Message"
+    },
+    {
+      "from": "them",
+      "text": "'Someone from the old days.' So Ishida knew it was coming and still opened the door. Ten years of cowards, Detective — everyone from that school kept their mouths shut until people started dying. Question is who finally scared them enough to talk.",
+      "emotion": "serious",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Diary Page"
+    },
+    {
+      "from": "them",
+      "text": "Mori. Hinako was on duty that day... *She pulls a plastic sleeve from her bag, hands trembling slightly.* Take it. Two months ago, before the first body, this turned up in my mailbox — no stamp, no name. Unfolded, it said: 'Ask them about Hinako Mori.' I thought it was a tip, a scoop. Now I don't know if I've been dancing to the killer's tune this whole time.",
+      "emotion": "nervous",
+      "reveal": "aya_letter",
+      "source": "ai"
+    }
+  ]
+}

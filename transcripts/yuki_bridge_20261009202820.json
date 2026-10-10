@@ -1,0 +1,41 @@
+{
+  "session": "20261009202820",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "What did you hear before midnight?"
+    },
+    {
+      "from": "system",
+      "text": "AI unavailable (network down (test)). Using scripted reply."
+    },
+    {
+      "from": "them",
+      "text": "…There was a sound. Earlier. Before midnight — around ten to eleven. A little bell, ringing under the bridge. Then someone with a dark umbrella walked away along the river. I hid in the bus shelter. I didn’t go down until midnight.",
+      "emotion": "nervous",
+      "reveal": "bell_sound",
+      "source": "script"
+    },
+    {
+      "from": "ren",
+      "text": "Did you know the teacher?"
+    },
+    {
+      "from": "system",
+      "text": "AI unavailable (network down (test)). Using scripted reply."
+    },
+    {
+      "from": "them",
+      "text": "…I knew him. He gave me maths lessons at his house, for free. My school doesn’t allow it. I had a lesson tonight, but he cancelled. Here — “Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.” It felt wrong. So I went to check.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "script"
+    }
+  ]
+}

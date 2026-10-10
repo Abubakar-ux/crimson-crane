@@ -1,0 +1,55 @@
+{
+  "session": "20261010065739",
+  "interrogation": "hayama_file",
+  "char": "hayama",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…Sit down, Kagami. Ask what you came to ask. I closed that file. You read the signature."
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Hinako Mori File"
+    },
+    {
+      "from": "them",
+      "text": "Three days. You're staring at it right — three days. You want to know why a case like that shuts that fast? ...Ueno. Board liaison. He leaned on the chief, chief leaned on me. 'Before entrance exams, for the school's reputation.' I had doubts — the teacher too calm, the nurse too quick. I signed anyway. Got promoted that autumn. Never said that out loud before.",
+      "emotion": "nervous",
+      "reveal": "hayama_pressure",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Hinako Mori File"
+    },
+    {
+      "from": "them",
+      "text": "You're reading it again? Fine. Look at that order, kid. Same four names, same order as the bodies. Somebody read this file closer than I ever did. Kirishima was in Kyoto — I remember checking. It went nowhere, because I stopped looking.",
+      "emotion": "serious",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Why the File Closed"
+    },
+    {
+      "from": "them",
+      "text": "So you dug that up on your own. Yeah. That's how it went. Ueno wanted it dead, the chief passed it down, I signed. You want my resignation, kid, you'll have to wait till the killer's caught.",
+      "emotion": "angry",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Crane on Hayama’s Desk"
+    },
+    {
+      "from": "them",
+      "text": "Inside the station, Kagami. On my desk. Someone walked past my own people and left that. They know the file, they know the order, and they know it was me. ...I'm not handing this case to anyone else. Crane or no crane.",
+      "emotion": "serious",
+      "reveal": null,
+      "source": "ai"
+    }
+  ]
+}

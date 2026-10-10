@@ -1,29 +1,27 @@
 import { useEffect, useState } from 'react'
-import { getAiStatus } from './ai/interrogate'
 import { Background, EventCG } from './components/Background'
 import { CHARACTERS } from './game/characters'
 import { DialogueBox } from './components/DialogueBox'
 import { InterrogationPanel } from './components/InterrogationPanel'
-import { Backlog, Notebook } from './components/Notebook'
+import { Backlog, Notebook, StageModal } from './components/Notebook'
 import { Sprite } from './components/Sprite'
 import { loadVolume, playAmbience, playMusic, playSfx, setVolume, type Volume } from './game/audio'
 import { CLUES } from './game/clues'
+import { INTERROGATIONS } from './game/interrogations'
 import type { Emotion } from './game/types'
 import { useGame, visibleOptions } from './game/store'
 
 export default function App() {
   const screen = useGame((s) => s.screen)
-  const [ai, setAi] = useState<{ configured: boolean; model: string } | null>(null)
-  useEffect(() => void getAiStatus().then(setAi), [])
 
   return (
     <div className="viewport">
-      <div className="stage">{screen === 'title' ? <TitleScreen ai={ai} /> : <GameScreen aiOn={!!ai?.configured} />}</div>
+      <div className="stage">{screen === 'title' ? <TitleScreen /> : <GameScreen />}</div>
     </div>
   )
 }
 
-function TitleScreen({ ai }: { ai: { configured: boolean; model: string } | null }) {
+function TitleScreen() {
   const { newGame, continueGame, hasSave } = useGame()
   const [sound, setSound] = useState(false)
   useEffect(() => {
@@ -44,20 +42,13 @@ function TitleScreen({ ai }: { ai: { configured: boolean; model: string } | null
           <button onClick={() => setSound(true)}>Sound</button>
         </div>
         {sound && <SoundSettings onClose={() => setSound(false)} />}
-        <div className={`ai-status ${ai?.configured ? 'on' : ''}`}>
-          {ai === null
-            ? 'Checking AI…'
-            : ai.configured
-              ? `AI interrogations: ON · ${ai.model}`
-              : 'AI interrogations: OFF (scripted replies). Add your OpenRouter key to .env to enable.'}
-        </div>
       </div>
     </div>
   )
 }
 
-function GameScreen({ aiOn }: { aiOn: boolean }) {
-  const { scene, idx, bg, bgm, amb, sfx, cg, ren, stage, current, effect, toast, flags, advance, choose, toTitle } = useGame()
+function GameScreen() {
+  const { scene, idx, bg, bgm, amb, sfx, cg, ren, stage, current, effect, toast, flags, advance, choose, present, toTitle } = useGame()
   const [panel, setPanel] = useState<'notebook' | 'log' | 'sound' | null>(null)
 
   useEffect(() => playMusic(bgm ?? null), [bgm])
@@ -84,7 +75,9 @@ function GameScreen({ aiOn }: { aiOn: boolean }) {
   // The protagonist's portrait stays in the corner except on full-screen cards.
   const showRen = !!current && current.t !== 'card' && current.t !== 'end'
   // Lit when Ren speaks/thinks, and throughout interrogations (the player is asking as Ren).
-  const renSpeaking = (current?.t === 'say' && current.who === 'ren') || interrogating
+  const renSpeaking = (current?.t === 'say' && current.who === 'ren') || interrogating || current?.t === 'present'
+  // Whoever is talking stays lit; everyone else on stage dims. Narration and choices light nobody up.
+  const speaker = current?.t === 'say' ? current.who : interrogating ? INTERROGATIONS[current.id]?.char : undefined
 
   return (
     <div className={`game ${showRen ? 'with-ren' : ''}`}>
@@ -92,7 +85,7 @@ function GameScreen({ aiOn }: { aiOn: boolean }) {
         <Background id={bg} />
         <div className="sprites">
           {stage.map((c) => (
-            <div key={c.char} className={`sprite pos-${c.pos}`}>
+            <div key={c.char} className={`sprite pos-${c.pos} ${speaker && speaker !== c.char ? 'dim' : ''}`}>
               <Sprite char={c.char} emotion={c.emotion} />
             </div>
           ))}
@@ -109,12 +102,14 @@ function GameScreen({ aiOn }: { aiOn: boolean }) {
       {current?.t === 'choice' && (
         <div className="choices">
           {visibleOptions(current.options, flags).map((o) => (
-            <button key={o.goto} onClick={() => choose(o)}>{o.text}</button>
+            <button key={o.text} onClick={() => choose(o)}>{o.text}</button>
           ))}
         </div>
       )}
 
-      {interrogating && <InterrogationPanel key={current.id} id={current.id} aiOn={aiOn} />}
+      {interrogating && <InterrogationPanel key={current.id} id={current.id} />}
+
+      {current?.t === 'present' && <PresentPrompt key={`${scene}:${idx}`} prompt={current.prompt} onPresent={present} />}
 
       {(current?.t === 'card' || current?.t === 'end') && (
         <div className={`card ${current.t}`} onClick={current.t === 'card' ? advance : undefined}>
@@ -123,7 +118,7 @@ function GameScreen({ aiOn }: { aiOn: boolean }) {
           {current.t === 'end' ? (
             <button onClick={toTitle}>Return to title</button>
           ) : (
-            <small>click to begin</small>
+            <small>click to continue</small>
           )}
         </div>
       )}
@@ -149,6 +144,21 @@ function GameScreen({ aiOn }: { aiOn: boolean }) {
   )
 }
 
+/** "Present evidence" step of an accusation: the notebook opens straight away and can be reopened. */
+function PresentPrompt({ prompt, onPresent }: { prompt: string; onPresent: (clue: string) => void }) {
+  const [open, setOpen] = useState(true)
+  return (
+    <>
+      <div className="present-prompt">
+        <small>PRESENT EVIDENCE</small>
+        <p>{prompt}</p>
+        <button className="primary" onClick={() => setOpen(true)}>Open notebook</button>
+      </div>
+      {open && <Notebook onClose={() => setOpen(false)} onPresent={onPresent} />}
+    </>
+  )
+}
+
 function RenPortrait({ speaking, emotion }: { speaking: boolean; emotion: Emotion }) {
   const sprites = CHARACTERS.ren.sprites
   const src = sprites?.[emotion] ?? sprites?.neutral
@@ -169,12 +179,7 @@ function SoundSettings({ onClose }: { onClose: () => void }) {
     setVolume(next)
   }
   return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal sound" onClick={(e) => e.stopPropagation()}>
-        <header>
-          <h2>SOUND</h2>
-          <button className="close" onClick={onClose}>✕</button>
-        </header>
+    <StageModal className="sound" title="SOUND" onClose={onClose}>
         <div className="sound-body">
           {(['music', 'sfx'] as const).map((k) => (
             <label key={k}>
@@ -185,7 +190,6 @@ function SoundSettings({ onClose }: { onClose: () => void }) {
           ))}
           <button className="test" onClick={() => playSfx('evidence')}>Test sound effect</button>
         </div>
-      </div>
-    </div>
+    </StageModal>
   )
 }

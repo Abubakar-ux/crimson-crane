@@ -1,0 +1,33 @@
+{
+  "session": "20261010064107",
+  "interrogation": "kirishima_interview",
+  "char": "kirishima",
+  "lines": [
+    {
+      "from": "them",
+      "text": "I have agreed to this conversation as a courtesy, young man. I ran a school for twenty years. I do not require protection, and I do not require questioning."
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Last Entry"
+    },
+    {
+      "from": "them",
+      "text": "...So that is what you have. *his hands begin to tremble, and he grips the edge of the table* Yes. I was there. On the roof, in the rain. She said she had copies and would go to the papers, and I — I only took her wrists, Detective, only to take the notebook from her. She twisted free. She stepped back. The railing... I let go, I did not push, I swear to you I let go. And then I drove home, and the next day I had my secretary record Kyoto, because I... because the truth would have ended everything I built.",
+      "emotion": "nervous",
+      "reveal": "kirishima_truth",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Hinako’s Notebook"
+    },
+    {
+      "from": "them",
+      "text": "The notebook, the bell... *his eyes fix on a point somewhere past you* You should understand something, Detective. About a month after that unfortunate incident, a young woman came to my house. University age, short hair, glasses. Hinako's elder sister. She stood at my gate and screamed that I had killed her sister, and hanging from her bag was a tiny silver bell — a bell I recognised, because Hinako wore it every day until I confiscated it. I had the police remove the girl. I never learned her name, and I never saw her again. That is everything I know.",
+      "emotion": "nervous",
+      "reveal": "bell_owner",
+      "source": "ai"
+    }
+  ]
+}

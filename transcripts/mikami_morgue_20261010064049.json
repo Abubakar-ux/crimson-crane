@@ -1,0 +1,33 @@
+{
+  "session": "20261010064049",
+  "interrogation": "mikami_morgue",
+  "char": "mikami",
+  "lines": [
+    {
+      "from": "them",
+      "text": "Detective. Visiting hours for the living are short, so be efficient. You’re here about a ten-year-old death, not about Mr. Ishida. I can tell from your face."
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Hinako Mori File"
+    },
+    {
+      "from": "them",
+      "text": "...You brought that file in here. Then you should know I was a trainee at this office that June, Detective, and I assisted at her autopsy. I recorded grip bruises on both wrists — adult fingers — and sedatives in her blood with no prescription anywhere. My supervisor called the bruises 'from the fall' and signed it an accident. I kept my own notes. I have never shown them to anyone, until possibly now.",
+      "emotion": "serious",
+      "reveal": "old_autopsy",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "Your notes are incomplete, Detective — deliberately, on my part. All four wounds came from the same blade: short, thin, single-edged, kept razor sharp. A kitchen petty knife. The cuts are economical — the work of someone who cuts things every day for a living. I left that out of the reports as 'speculation.' It still is. But cooks, surgeons, florists — someone's hands have been doing this motion for years.",
+      "emotion": "serious",
+      "reveal": "knife_profile",
+      "source": "ai"
+    }
+  ]
+}

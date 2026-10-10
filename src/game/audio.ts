@@ -4,22 +4,30 @@
  */
 
 export const MUSIC: Record<string, string> = {
-  title: '/music/title.mp3',
-  night_rain: '/music/night_rain.mp3',
-  crime_scene: '/music/crime_scene.mp3',
-  interrogation: '/music/interrogation.mp3',
-  cafe: '/music/cafe.mp3',
+  title: 'music/title.mp3',
+  night_rain: 'music/night_rain.mp3',
+  crime_scene: 'music/crime_scene.mp3',
+  interrogation: 'music/interrogation.mp3',
+  cafe: 'music/cafe.mp3',
+  school: 'music/school.mp3',
+  climax: 'music/climax.mp3',
+  trial: 'music/trial.mp3',
+  sorrow: 'music/sorrow.mp3',
 }
 
 export const AMBIENCE: Record<string, string> = {
-  rain: '/sfx/rain_loop.mp3',
+  rain: 'sfx/rain_loop.mp3',
 }
 
 export const SFX: Record<string, string> = {
-  evidence: '/sfx/evidence.mp3',
-  door_bang: '/sfx/door_bang.mp3',
-  stinger: '/sfx/stinger.mp3',
-  thunder: '/sfx/thunder.mp3',
+  evidence: 'sfx/evidence.mp3',
+  door_bang: 'sfx/door_bang.mp3',
+  stinger: 'sfx/stinger.mp3',
+  thunder: 'sfx/thunder.mp3',
+  bell: 'sfx/bell.mp3',
+  footsteps: 'sfx/footsteps.mp3',
+  phone: 'sfx/phone.mp3',
+  glass: 'sfx/glass.mp3',
 }
 
 const VOL_KEY = 'crimson-crane:volume'
@@ -56,7 +64,7 @@ function fade(el: HTMLAudioElement, to: number, ms: number, done?: () => void) {
   const start = performance.now()
   const tick = (now: number) => {
     const p = Math.min(1, (now - start) / ms)
-    el.volume = from + (to - from) * p
+    el.volume = Math.min(1, Math.max(0, from + (to - from) * p))
     if (p < 1) requestAnimationFrame(tick)
     else done?.()
   }

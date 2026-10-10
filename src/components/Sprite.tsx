@@ -1,10 +1,12 @@
 import { CHARACTERS } from '../game/characters'
+import { useGame } from '../game/store'
 import type { Emotion, SpriteLook } from '../game/types'
 
 /** Real art if provided, otherwise a code-drawn placeholder bust. */
 export function Sprite({ char, emotion }: { char: string; emotion: Emotion }) {
   const c = CHARACTERS[char]
-  const img = c?.sprites?.[emotion] ?? c?.sprites?.neutral
+  const alt = useGame((s) => (c?.altSprites && s.flags.includes(c.altSprites.flag) ? c.altSprites.sprites : null))
+  const img = alt?.[emotion] ?? alt?.neutral ?? c?.sprites?.[emotion] ?? c?.sprites?.neutral
   if (img) return <img className="sprite-img" src={img} alt={c.name} draggable={false} />
   if (!c?.look) return null
   return <PlaceholderSprite look={c.look} emotion={emotion} />

@@ -1,0 +1,44 @@
+{
+  "session": "20261009184538",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "You look terrified. Nobody here thinks you did this. What really happened tonight?"
+    },
+    {
+      "from": "them",
+      "text": "…You really don't think it was me? Then… I'll tell you. It was earlier. Around ten-fifty, I was on the bridge, and I heard a tiny bell ringing from underneath. High-pitched, like a charm… Then someone with a dark umbrella walked away along the riverbank. I couldn't see their face. I hid in a bus shelter for an hour before I dared to look.",
+      "emotion": "nervous",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "From behind…? So the person with the umbrella… they came up behind him and he didn't even turn around. Like he knew them. …I still don't understand any of this.",
+      "emotion": "shocked",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "Seiran… that's my school. That's why I didn't want to say. Ishida-sensei… he was my teacher. He gave me private maths lessons at his house, secretly — the school forbids outside tutoring. That night he texted me at nine-forty: 'Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.' …It felt wrong, so I went toward his house over the bridge. Here, look at my phone.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}

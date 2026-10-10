@@ -1,0 +1,77 @@
+{
+  "session": "20261009201528",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "Did you see someone suspicious in the vicinity?"
+    },
+    {
+      "from": "them",
+      "text": "Suspicious…? I… I don't know. It was dark, and I was only there for a moment. I just… found him and called. That's all.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "What time was it"
+    },
+    {
+      "from": "them",
+      "text": "Midnight… I think. Around midnight, when I called you. Why? Does… does the time matter?",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…Before midnight. Okay. I was there earlier. Around ten fifty… I was on the bridge, and I heard something. A tiny, high-pitched bell, from under it. Then someone walked away along the riverbank. They had a dark umbrella. I couldn't see their face… I was too scared to move, so I hid for an hour before I went down. I'm sorry I lied…",
+      "emotion": "shocked",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "It didn't have to come to this if you were not lying"
+    },
+    {
+      "from": "them",
+      "text": "…I know. I'm sorry, Detective. I was scared. A person who maybe just… walked away from a murder. What would you have done…? But I'll tell you everything else. I promise.",
+      "emotion": "sad",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Ink on the Victim’s Palm"
+    },
+    {
+      "from": "them",
+      "text": "A… seven, and a three? …I don't know what that could mean. I never spoke to Ishida-sen— I mean, the victim. I didn't… we didn't talk. I'm sorry, I can't help with numbers like that.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "Seiran… that's my school. But… class 2-B? I'm in 2-A, that's not… I don't know this page. …Detective, there's something I have to tell you. I knew him. Ishida-sensei was my maths tutor — he gave me private lessons at his home, for free, because my family can't afford cram school. It's forbidden at Seiran, so I kept it secret. That night I was supposed to have a lesson at ten, but at 21:40 he texted me: 'Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.' It felt wrong, so I went toward his house… over the bridge. I'll show you the message.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "session": "20261009191911",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "i am pretty sure you had a hand in this homicide"
+    },
+    {
+      "from": "them",
+      "text": "…What? No! I-I just found him. I called you right away, Detective. Why would you say that…? *clutches umbrella tighter* Please, don't look at me like that.",
+      "emotion": "angry",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…The autopsy says 22:00 to 23:00. Then… I have to tell you. I was on the bridge earlier, around 22:50. I heard a tiny bell ringing from under it. Then someone with a dark umbrella walked away along the riverbank. I couldn't see their face. I was too scared to go down, so I hid in a bus shelter… until midnight. That's the truth, I swear.",
+      "emotion": "shocked",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "…Seiran. That's my school. But… class 2-B? I'm in 2-A, I don't know that page. *hesitates, then pulls out her phone* …Detective, I lied about walking from the store. Ishida-sensei was my tutor. Private maths lessons, at his house. Seiran forbids it, so I couldn't say anything. That night he texted me at 21:40: 'Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.' …It felt wrong, so I went toward his house over the bridge.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}

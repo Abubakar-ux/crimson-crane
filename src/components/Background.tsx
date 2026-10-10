@@ -1,19 +1,36 @@
 /**
  * Placeholder backgrounds drawn in SVG. To use real art, add an entry to BG_IMAGES
- * (put files in /public/backgrounds), e.g. bridge_night: '/backgrounds/bridge_night.jpg'.
+ * (put files in /public/backgrounds), e.g. bridge_night: 'backgrounds/bridge_night.jpg'.
  */
 export const BG_IMAGES: Partial<Record<string, string>> = {
-  bridge_night: '/backgrounds/bridge_night.webp',
-  station_night: '/backgrounds/station_night.webp',
-  under_bridge: '/backgrounds/under_bridge.webp',
-  patrol_car: '/backgrounds/patrol_car.webp',
-  cafe_night: '/backgrounds/cafe_night.webp',
+  bridge_night: 'backgrounds/bridge_night.webp',
+  station_night: 'backgrounds/station_night.webp',
+  under_bridge: 'backgrounds/under_bridge.webp',
+  patrol_car: 'backgrounds/patrol_car.webp',
+  cafe_night: 'backgrounds/cafe_night.webp',
+  police_office: 'backgrounds/police_office.webp',
+  ishida_flat: 'backgrounds/ishida_flat.webp',
+  seiran_gate: 'backgrounds/seiran_gate.webp',
+  interview_room: 'backgrounds/interview_room.webp',
+  morgue: 'backgrounds/morgue.webp',
+  annex_hall: 'backgrounds/annex_hall.webp',
+  storeroom_73: 'backgrounds/storeroom_73.webp',
+  kirishima_house: 'backgrounds/kirishima_house.webp',
+  rooftop_night: 'backgrounds/rooftop_night.webp',
 }
 
 /** Full-screen event illustrations (put files in /public/cg). */
 export const CG_IMAGES: Partial<Record<string, string>> = {
-  body_bridge: '/cg/body_bridge.webp',
+  body_bridge: 'cg/body_bridge.webp',
+  hinako_notebook: 'cg/hinako_notebook.webp',
+  hinako_roof: 'cg/hinako_roof.webp',
+  rooftop_attack: 'cg/rooftop_attack.webp',
+  kotone_confession: 'cg/kotone_confession.webp',
+  grave: 'cg/grave.webp',
 }
+
+/** Outdoor illustrations that get the falling-rain overlay. */
+const RAINY_CG = new Set(['body_bridge', 'hinako_roof', 'rooftop_attack'])
 
 export function EventCG({ id }: { id: string }) {
   const src = CG_IMAGES[id]
@@ -21,20 +38,21 @@ export function EventCG({ id }: { id: string }) {
   return (
     <div className="cg" key={id}>
       <img src={src} alt="" draggable={false} />
-      <div className="rain" />
+      {RAINY_CG.has(id) && <div className="rain" />}
       <div className="vignette" />
     </div>
   )
 }
 
-const RAINY = new Set(['station_night', 'bridge_night', 'under_bridge', 'patrol_car', 'cafe_night'])
+const RAINY = new Set(['station_night', 'bridge_night', 'under_bridge', 'patrol_car', 'cafe_night', 'seiran_gate', 'kirishima_house', 'rooftop_night', 'police_office'])
+const BEHIND_GLASS = new Set(['cafe_night', 'patrol_car', 'police_office'])
 
 export function Background({ id }: { id: string }) {
   const img = BG_IMAGES[id]
   return (
     <div className="bg" key={id}>
       {img ? <img src={img} alt="" draggable={false} /> : <Drawn id={id} />}
-      {RAINY.has(id) && <div className={`rain ${id === 'cafe_night' || id === 'patrol_car' ? 'rain-window' : ''}`} />}
+      {RAINY.has(id) && <div className={`rain ${BEHIND_GLASS.has(id) ? 'rain-window' : ''}`} />}
       <div className="vignette" />
     </div>
   )

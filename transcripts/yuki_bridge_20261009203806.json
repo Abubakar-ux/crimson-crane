@@ -1,0 +1,66 @@
+{
+  "session": "20261009203806",
+  "interrogation": "yuki_bridge",
+  "char": "yuki",
+  "lines": [
+    {
+      "from": "them",
+      "text": "…I was walking home from the convenience store. I saw him under the bridge. That’s all. Can I go home now?"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Four Victims"
+    },
+    {
+      "from": "them",
+      "text": "Four…? I only knew about… I didn't know there were others. A pharmacist, a councilman, a nurse… and Ishida… no, I mean, the teacher. I don't know any of them. I just found him, that's all…",
+      "emotion": "shocked",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Autopsy Notes (Ishida)"
+    },
+    {
+      "from": "them",
+      "text": "…That time… he died between ten and eleven? Then… then I have to tell you. I was already there. Around ten-fifty, I heard it — a tiny bell, ringing under the bridge. And then someone walked away along the riverbank, with a dark umbrella. I couldn't see their face… I was too scared. I hid in a bus shelter for almost an hour before I went down. I'm sorry I lied…",
+      "emotion": "nervous",
+      "reveal": "bell_sound",
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: Ink on the Victim’s Palm"
+    },
+    {
+      "from": "them",
+      "text": "…His palm? A 7… and maybe a 3…? I didn't see that. When I found him, I only saw the crane in his mouth. I don't know what numbers would mean. I'm sorry… I really don't.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Bell in the Rain"
+    },
+    {
+      "from": "them",
+      "text": "…You know about the bell already? Then… yes. That's what I heard. A tiny, high-pitched bell, like from a charm or a phone strap. And the person walking away with the dark umbrella… I couldn't see anything else, I swear. Please believe me, Detective.",
+      "emotion": "nervous",
+      "reveal": null,
+      "source": "ai"
+    },
+    {
+      "from": "ren",
+      "text": "Presents: The Fourth Crane"
+    },
+    {
+      "from": "them",
+      "text": "…Seiran Academy. That's… that's my school. But I'm in class 2-A, not 2-B… and I've never seen that page before. But… if it's connected to Seiran, then… then I should tell you the truth. I knew Ishida-sensei. He gave me private maths lessons at his home, because my family can't afford cram school. It's against school rules, so I kept it secret. That night I was going to his house for a lesson… but at 21:40 he texted me: 'Sorry, Yuki. Cancel tonight. Someone from the old days wants to talk.' It felt wrong, so I went toward his house by way of the bridge. Here… look at my phone.",
+      "emotion": "sad",
+      "reveal": "ishida_text",
+      "source": "ai"
+    }
+  ]
+}
